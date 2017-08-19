@@ -11,12 +11,20 @@
         contentBase: './',
         publicPath: './public/'
     },
-    plugins: [
-    //   new CleanWebpackPlugin(['public/js']),
-    //   new HtmlWebpackPlugin({
-    //     title: 'Development'
-    //   })
-    ],
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['env']
+            }
+          }
+        }
+      ]
+    },
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'public/js')

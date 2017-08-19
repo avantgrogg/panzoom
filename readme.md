@@ -10,4 +10,4 @@ Then
 
 Now the project cant be viewed at `localhost:8080`
 
-The working project can also be viewed here(befitting-cakes.surge.sh)
+You can substitute `npm run` for `yarn` if youre old school. The working project can also be viewed here(befitting-cakes.surge.sh)
