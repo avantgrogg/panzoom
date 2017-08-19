@@ -6,8 +6,11 @@
   "author": "Douglas Grogg",
   "license": "MIT",
   "dependencies": {
+    "ava": "^0.22.0",
     "babel-cli": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
     "clean-webpack-plugin": "^0.1.16",
     "html-webpack-plugin": "^2.30.1",
     "morphdom": "^2.3.3",
@@ -22,5 +25,14 @@
     "sass": "node-sass ./src/scss/index.scss ./public/css/index.css -w",
     "test": "ava",
     "build": "webpack && sass && start"
+  },
+  "ava": {
+    "source": [
+      "tests/**/*.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
   }
 }
