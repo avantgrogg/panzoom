@@ -1,19 +1,15 @@
-import { saveViewportDimensions } from './actions';
-
-export function determineViewport(updateState) {
-    updateState(saveViewportDimensions(window.innerWidth, window.innerHeight));
+/**
+ * Calculage the current viewport dimensions
+ */
+export function determineViewport() {
+    return {width: window.innerWidth, height: window.innerHeight };
 }
 
-export function generateImageRoute({dimensions, routes}) {
-    return `${routes.images}?w=${dimensions.width}`;
-}
-
-export function generateZoomImageRoute({dimensions, routes}) {
-    return `${routes.images}?w=${dimensions.width*3}`;
-}
-
-export function getImageCenter({dimensions}) {
-    const containerSize = dimensions.width;
-    const imageSize = containerSize*3;
-    return (imageSize-containerSize)/2;
+/**
+ * Create a string with the product image route and dimensions*3 for current viewport
+ * @param {object} dimensions - The current width/height values used for the product image
+ * @param {object} images - The image routes  
+ */
+export function generateZoomImageRoute({dimensions, images}) {
+    return `${images.product}?w=${dimensions.width*3}`;
 }
