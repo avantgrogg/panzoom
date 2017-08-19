@@ -1,0 +1,1 @@
+This a component based approach to a panzoom widget. It is completely vanilla except for morphdom, which is used to render dom updates.

@@ -1,6 +1,11 @@
 import { SAVE_VIEWPORT_DIMENSIONS, ZOOM_IMAGE, UPDATE_ZOOM_POSITION } from './actions';
 import { defaults } from './config';
 
+/**
+ * Updates the dimensions part of the store with a new dimensions
+ * @param {object} state - The current dimensions state 
+ * @param {object} update - The update flowing through the store
+ */
 export function updateDimensions(state, update) {
     if(update.type === SAVE_VIEWPORT_DIMENSIONS) {
         return Object.assign({}, state, {
@@ -11,6 +16,11 @@ export function updateDimensions(state, update) {
     return state;
 }
 
+/**
+ * Toggles the value of zoomed in the store
+ * @param {*} state - The current zoomed state
+ * @param {object} update - The update flowing through the store
+ */
 export function updateZoomed(state, update) {
     if(update.type === ZOOM_IMAGE) {
         return !state;
@@ -19,6 +29,11 @@ export function updateZoomed(state, update) {
     return state;
 }
 
+/**
+ * Updates the zoomPosition part of the store with new position data
+ * @param {*} state - The current zoomPosition state
+ * @param {object} update - The update flowing through the store
+ */
 export function updateZoomPosition(state, update) {
     if(update.type === ZOOM_IMAGE) {
         return Object.assign({}, {
